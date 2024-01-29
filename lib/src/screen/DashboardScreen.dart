@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({super.key});
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
 }
@@ -88,7 +89,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/images/job.png',
-              color: Colors.white,
+              color: _selectedIndex == 0 ? Colors.black : Colors.white,
               width: 25,
               height: 25,
             ),
@@ -98,7 +99,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/images/post.png',
-              color: Colors.white,
+              color: _selectedIndex == 1 ? Colors.black : Colors.white,
               width: 25,
               height: 25,
             ),
@@ -108,7 +109,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/images/ads.png',
-              color: Colors.white,
+              color: _selectedIndex == 2 ? Colors.black : Colors.white,
               width: 25,
               height: 25,
             ),
@@ -118,7 +119,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/images/profile2.png',
-              color: Colors.white,
+              color: _selectedIndex == 3 ? Colors.black : Colors.white,
               width: 25,
               height: 25,
             ),
@@ -128,8 +129,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ],
         selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
+        selectedItemColor: (_selectedIndex == 0 ||
+                _selectedIndex == 1 ||
+                _selectedIndex == 2 ||
+                _selectedIndex == 3)
+            ? Colors.black
+            : Colors.white,
         onTap: _onItemTapped,
+        showUnselectedLabels: true,
       ),
     );
   }

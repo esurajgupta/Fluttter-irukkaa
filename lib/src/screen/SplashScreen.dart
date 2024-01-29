@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:irukkaa/src/screen/DashboardScreen.dart';
 import 'package:irukkaa/src/screen/LoginScreen.dart';
 
 class SpalshScren extends StatefulWidget {
